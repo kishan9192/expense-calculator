@@ -8,30 +8,30 @@ function IncomeExpenses() {
     .filter((transaction) => transaction > 0)
     .reduce((acc, item) => (acc += item), 0)
     .toFixed(2);
-    
+
   const expense = amounts
-    .filter((transaction) => transaction< 0)
+    .filter((transaction) => transaction < 0)
     .reduce((acc, item) => (acc += item), 0)
     .toFixed(2);
 
-    // This way it'll make an array of object where transaction amount is < 0. Use console.log to check
-    // const expense = transactions
-    // .filter((transaction) => transaction.amount < 0)
-    // .reduce((acc, item) => (acc += item), 0)
-    // .toFixed(2);
+  // This way it'll make an array of object where transaction amount is < 0. Use console.log to check
+  // const expense = transactions
+  // .filter((transaction) => transaction.amount < 0)
+  // .reduce((acc, item) => (acc += item), 0)
+  // .toFixed(2);
 
   return (
     <div className="inc-exp-container">
       <div>
         <h4>Income</h4>
         <p id="money-plus" className="money plus">
-          +${income}
+          +₹{income}
         </p>
       </div>
       <div>
         <h4>Expense</h4>
         <p id="money-minus" className="money minus">
-          -${expense}
+          -₹{expense}
         </p>
       </div>
     </div>
